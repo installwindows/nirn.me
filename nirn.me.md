@@ -6,7 +6,7 @@ Online portal for private data.
 
 Its a desktop/bulletinboard
 
-Works with a cli tool to sync the content of a folder with tge webapp.
+Works with a cli tool to sync the content of a folder with the webapp.
 
 
 ## Implementation

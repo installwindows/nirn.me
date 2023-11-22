@@ -1,11 +1,6 @@
-from django.urls import path
-from django.http import HttpResponse
-from django.template.loader import render_to_string
 DEBUG = True
 SECRET_KEY = 'secret'
-
-ROOT_URLCONF = __name__
-
+ROOT_URLCONF = 'urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -14,15 +9,13 @@ TEMPLATES = [
         ],
     },
 ]
-
-def home(request):
-    context = {
-        'title': 'Hello World',
-        'content': 'This is the content of the page.',
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'db.sqlite3',
     }
-    html = render_to_string('home.html', context)
-    return HttpResponse(html)
-
-urlpatterns = [
-    path("", home, name='homepage'),
+}
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
+INSTALLED_APPS = [
+    'nirn',
 ]
