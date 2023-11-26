@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE HTML>
 
 <html>
@@ -22,19 +23,6 @@
 </head>
 <body>
 	<h1>{{ title }}</h1>
-	<form hx-post="/nirn" hx-target="#nirn" hx-swap="outerHTML">
-		<input type="text" name="secret_key" placeholder="secret_key">
-		<input type="text" name="name" placeholder="name">
-		<input type="submit" value="Create">
-	</form>
-	<hr>
-	<div id="nirn">
-		{% for nirn in nirns %}
-			<div>
-				<h2>{{ nirn.secret_key }}</h2>
-				<p>{{ nirn.name }}</p>
-			</div>
-		{% endfor %}
-	</div>
+	{% include "nirnroots.html" %}
 </body>
 </html>

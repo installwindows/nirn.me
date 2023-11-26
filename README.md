@@ -24,3 +24,11 @@ Text, links, files.
 
 Follow the instructions.
 
+Make migrations:
+`django-admin makemigrations nirn --pythonpath=. --settings=settings`
+
+Mirate:
+`django-admin migrate nirn 0 --pythonpath=. --settings=settings`
+
+Run dev server:
+`django-admin runserver --pythonpath=. --settings=settings`

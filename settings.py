@@ -18,4 +18,9 @@ DATABASES = {
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 INSTALLED_APPS = [
     'nirn',
+    'django.contrib.staticfiles',
+]
+STATIC_URL = "static/"
+STATICFILES_DIRS = [
+    'static/',
 ]

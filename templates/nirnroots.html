@@ -1,0 +1,21 @@
+{% load static %}
+<div id="nirnroots">
+	<ul>
+		{% for nirnroot in nirnroots %}
+			<li>
+				<a href="/{{ nirnroot.slug }}">{{ nirnroot.name }}</a>
+				<form hx-delete="/{{ nirnroot.slug }}" hx-target="#nirnroots">
+					<input type="submit" value="Delete">
+				</form>
+			</li>
+		{% endfor %}
+	</ul>
+	<hr>
+	<form hx-post="/nirnroot" hx-target="#nirnroots">
+		<input type="text" name="slug" placeholder="slug">
+		<input type="password" name="passphrase" placeholder="passphrase">
+		<input type="text" name="name" placeholder="name">
+		<input type="submit" value="Create">
+		<img class="htmx-indicator" src="{% static 'img/circles.svg' %}" width="50" alt="" style="background-color: #1ABC9C;">
+	</form>
+</div>

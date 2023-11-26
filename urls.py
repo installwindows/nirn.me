@@ -4,5 +4,5 @@ import views
 
 urlpatterns = [
     path("", views.home, name='homepage'),
-    path("nirn", views.NirnView.as_view(), name='nirn'),
+    path("nirnroot", views.NirnrootView.as_view(), name='nirnroot'),
 ]
